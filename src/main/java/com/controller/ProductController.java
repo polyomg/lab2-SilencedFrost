@@ -13,6 +13,7 @@ import java.util.List;
 @Controller
 public class ProductController {
     protected List<Product> productList = new ArrayList<>();
+
     @RequestMapping("/product/form")
     public void form() {
     }
@@ -25,5 +26,4 @@ public class ProductController {
         model.addAttribute("productList", productList);
         return "forward:/product/form";
     }
-
 }

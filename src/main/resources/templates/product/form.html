@@ -6,19 +6,27 @@
 </head>
 <body>
     <form action="/product/save" method="post">
-        <input name="name">
-        <input name="price">
+        <input name="name" placeholder="name">
+        <input name="price" placeholder="price">
         <button>Save</button>
     </form>
+    Previously entered product
     <ul>
-        <li th:text="${name}"></li>
-        <li th:text="${price}"></li>
+        <li>
+            Name: <span th:text="${name}"></span>
+            <br>
+            Price: <span th:text="${price}"></span>
+        </li>
     </ul>
+    Product list
     <ul>
         <th:block th:each="item: ${productList}">
-            <li th:text="${item.name}"></li>
-            <li th:text="${item.price}"></li>
-            <hr>
+            <li>
+                Name: <span th:text="${item.name}"></span>
+                <br>
+                Price: <span th:text="${item.price}"></span>
+                <hr>
+            </li>
         </th:block>
     </ul>
 </body>
